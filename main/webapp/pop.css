@@ -1,0 +1,317 @@
+#main {
+	background: linear-gradient(245deg, #7f89c4, #565b83);
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+#show:checked ~ .container {
+	display: block;
+}
+
+.container {
+	display: none;
+	width: 350px;
+	padding: 20px;
+	border-radius: 4px;
+	background: #3d4262;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container {
+	z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .close-btn {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.close-btn:hover {
+	color: white;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+label {
+	display: block;
+	color: white;
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.nameinput {
+	display: block;
+	width: 90%;
+	height: 30px;
+	background: rgba(255, 255, 255, 0.25);
+	border: none;
+	font-size: 20px;
+	outline: none;
+	border-radius: 0px 15px;
+	border-bottom: 1px solid white;
+	padding: 10px;
+	color: white;
+}
+
+button {
+	display: block;
+	width: 160px;
+	padding: 8px;
+	border: none;
+	outline: none;
+	background: linear-gradient(308deg, #8b95cc, #2c2f44);
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+	cursor: pointer;
+	margin-top: 20px;
+	border-radius: 12px;
+	height: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: #20002c;
+}
+
+.link {
+	margin-top: 30px;
+	text-align: center;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+.imageDiv,#contactlist img{
+	
+    height: 40px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contactlist .imageDiv,#contactlist img, #header img,#favContacts .imageDiv,#favContacts img	 {
+	display: flex;
+    align-items: center;
+    border-radius: 15px;
+    min-width: 28px;
+    background: transparent;
+    max-height: 30px;
+    margin-right: 20px;
+}
+
+#invalidDetails {
+	visibility: hidden;
+	max-width: 50px;
+	height: 50px;
+	margin: auto;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	font-size: 17px;
+	white-space: nowrap;
+}
+/* #invalidDetails #img{
+	width: 50px;
+	height: 50px;
+    
+    float: left;
+    
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+    box-sizing: border-box;
+
+    
+    background-color: #111;
+    color: #fff;
+} */
+#invalidDetails #desc {
+	border-radius: 10px;
+	background: linear-gradient(308deg, #8b95cc, #2c2f44);
+	color: white;
+	font-size: 20px;
+	padding: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#usernameValid, #passwordValid, #mobileValid, #usernameValidlog,
+	#passwordValidlog {
+		visibility: hidden;
+		color: rgb(243, 125, 125);
+		font-size: 14px;
+		/* padding: 10px; */
+		margin: 0px;
+		height: 21px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+}
+
+#usernameValid.show, #mobileValid.show, #passwordValid.show,
+	#usernameValidlog.show, #passwordValidlog.show {
+	visibility: visible;
+}
+
+#invalidDetails.show {
+	visibility: visible;
+	-webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink
+		0.5s 2s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s,
+		fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+	from {bottom: 0;
+	opacity: 0;
+}
+
+to {
+	bottom: 30px;
+	opacity: 1;
+}
+
+}
+@keyframes fadein {
+	from {bottom: 0;
+	opacity: 0;
+}
+
+to {
+	bottom: 30px;
+	opacity: 1;
+}
+
+}
+@-webkit-keyframes expand {
+	from {min-width: 50px
+}
+
+to {
+	min-width: 350px
+}
+
+}
+@keyframes expand {
+	from {min-width: 50px
+}
+
+to {
+	min-width: 350px
+}
+
+}
+@-webkit-keyframes stay {
+	from {min-width: 350px
+}
+
+to {
+	min-width: 350px
+}
+
+}
+@keyframes stay {
+	from {min-width: 350px
+}
+
+to {
+	min-width: 350px
+}
+
+}
+@-webkit-keyframes shrink {
+	from {min-width: 350px;
+}
+
+to {
+	min-width: 50px;
+}
+
+}
+@keyframes shrink {
+	from {min-width: 350px;
+}
+
+to {
+	min-width: 50px;
+}
+
+}
+@-webkit-keyframes fadeout {
+	from {bottom: 30px;
+	opacity: 1;
+}
+
+to {
+	bottom: 60px;
+	opacity: 0;
+}
+
+}
+@keyframes fadeout {
+	from {bottom: 30px;
+	opacity: 1;
+}
+
+to {
+	bottom: 60px;
+	opacity: 0;
+}
+
+}
+/* input[type=text]:focus{
+    background-color: white;
+} */
+#helpicon {
+	cursor: pointer;
+	background: white;
+	height: 150px;
+}
+
+#userimg {
+	background: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	margin-left: 40px;
+	padding: 0;
+	height: 80px;
+	width: 80px;
+	border: 3px solid white;
+}
+
+#imageInput {
+	background: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	margin-left: 80px;
+	padding: 0;
+	height: 150px;
+}
+#usermain{
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+	width: 100%;
+
+}

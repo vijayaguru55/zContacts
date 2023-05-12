@@ -1,0 +1,582 @@
+#newContactFromHead, #show, .show-btn, #menu {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#searchForContacts {
+	border-radius: 0px;
+	margin-top: 10px;
+	background-color: transparent;
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
+#searchConatcs {
+	background: rgba(255, 255, 255, 0.08);
+	display: flex;
+    width: 70%;
+	border-radius: 0px 10px;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(308deg, #acb0c8, #787d9f);
+}
+
+#logoutbutton, #addcontactButton,#favButton {
+	display: flex;
+    min-height: 30px;
+    flex-direction: row;
+    border-radius: 60px;
+    /* padding: 10px 20px; */
+    border: transparent;
+    font-size: 15px;
+    font-weight: 550;
+    color: white;
+    margin-bottom: 16px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* #favcontactlist,#contactView{
+	visibility: hidden;
+} */
+#contacts ,br,#favContacts,#ContHead,#favContHead{
+	color: white;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+}
+
+
+#contacts:hover ,#menubar div:hover,#favContacts:hover{
+	background: rgba(255, 255, 255, 0.25);
+}
+
+#contacts:hover #favAndDel,#favContacts:hover #favAndDel{
+	opacity: 3;
+}
+/* #favourites{
+	position: absolute;
+    right: 8%;
+} */
+/* #del, #favourites {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+} */
+
+#image {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+}
+
+#clsBtn {
+	position: absolute;
+	left: 90%;
+}
+#menu span{
+	margin-top: 5px;
+}
+#menu {
+	cursor: pointer;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 28px;
+    width: 50px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#favAndDel {
+	opacity: 0;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    width: 250px;
+    justify-content: space-around;
+}
+
+#favAndDel span{
+    cursor: pointer;
+}
+#menubar {
+    float: left;
+    height: 100%;
+    z-index: 1;
+   
+    overflow-x: hidden;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#menubar div {
+	padding: 8px 8px 8px 8px;
+    /* text-decoration: none; */
+    font-size: 25px;
+    display: flex;
+    color: white;
+    border-radius: 0px 50px 50px 0px;
+    transition: 0.3s;
+    align-items: center;
+    /* align-content: center; */
+    height: 80px;
+    justify-content: center;
+}
+
+ /* {
+	color: aliceblue;
+} */
+
+#searchText:focus ,input:focus{
+	outline: none;
+    background: rgba(255, 255, 255, 0.25);
+} 
+
+@media screen and (max-height: 450px) {
+	#menubar {
+		padding-top: 15px;
+	}
+}
+
+#delContact {
+    display: none;
+    left: 38%;
+    top: 40%;
+    align-items: center;
+    position: fixed;
+    height: 230px;
+    border-radius: 10px;
+    width: 530px;
+    background: #3d4262;
+    flex-direction: column;
+    z-index: 100;
+}
+#header{
+	/* background: linear-gradient(245deg, #7f89c4, #565b83); */
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    /* top: 0px; */
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 10;
+}
+#headerandlogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+}
+
+#yesOrNo {
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+}
+
+#searchText {
+	display: flex;
+	width: 104%;
+	align-items: center;
+	font-weight: 600;
+	border-radius: 0px 10px;
+	background: transparent;
+	justify-content: space-between;
+}
+
+#NoContacts {
+	visibility: hidden;
+}
+
+#NoContacts.show {
+	display: flex;
+    position: fixed;
+    left: 30%;
+    width: 600px;
+    height: 500px;
+    top: 24%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+}
+
+#addImg {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    height: 45px;
+}
+#contactView{
+    display: flex;
+}
+#contactlist,#favcontactlist{
+    display: none;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 710px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%;
+}
+#searchAndHelp{
+	width: 80%;
+    
+    margin-right: 0%;
+}
+#searchAndHelp,#logoAndName{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fas fa-heart{
+	position: fixed;
+    right: 8%;
+}
+
+
+#menubar div img{
+	height: 30px;
+    margin-right: 10px;
+}
+.selectedHead{
+	background-color: rgba(255, 255, 255, 0.25);
+	
+}
+#contactView,#editWindw{
+    width: 90%;
+    color: white;
+}
+#contactView #nameAndMob{
+    margin-left: 200%;
+}
+
+/* #contactView #favourites,#contactView #favAndDel
+{
+    opacity: 1;
+    top: 20%;
+    left: 60%;
+} */
+#contactView #favAndDel{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;   
+    opacity: 1;
+    /* margin-top: 64%; */
+    margin-left: 312%;
+  
+}
+#contactView button{
+    margin-left: 420%;
+    margin-top: -28px;
+}
+/* #contactView #del{
+    position: fixed;
+    left: 70%;
+    top: 35%;
+} */
+#contactImage,#contactView img{
+    height: 150px;
+    border-radius: 100px;
+    width: 150px;
+    color: white;
+    font-size: 100px;
+    margin-top: 25%;
+    margin-bottom: -48%;
+    margin-left: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contactView #back{
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 20%;
+    margin-bottom: -35%;
+}
+
+#option img{
+    height: 30px;
+}
+#option div{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 50px;
+    cursor: pointer;
+ }
+
+ #option div:hover{
+    background-color: rgba(255, 255, 255, 0.25);
+ }
+#option{
+    background: rgb(5 5 7 / 25%);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    height: 150px;
+    color: white;
+    width: 110px;
+    border: 2px solid transparent;
+    right: 0%;
+}
+#chat_help{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#chatView{
+    display: none;
+}
+/* #chatHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+} */
+
+#chatView{  
+    background: linear-gradient(79deg, #464c6f, #4050b9);
+    flex-direction: column;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+    height: 63%;
+    width: 21%;
+    border-radius: 20px;
+    color: white;
+}
+#chatHeader{
+    background: rgba(255, 255, 255, 0.08);
+}
+#chatHeader,#messageAndSend{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 75px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#chatView span div,#chatView img,#messageAndSend span{
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    width: 46px;
+    background: transparent;
+    height: 45px;
+    margin-right: 25px;
+    margin-left: 20px;
+    font-size: 40px;
+}
+#chatView input{
+    margin: 0px 0px 0px 10px;
+    width: 65%;
+}
+#chatSpace{
+    height: 100%;
+    overflow: scroll;
+    width: 100%;
+    margin: 2%;
+}
+#sender{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: max-content;
+    width: 95%;
+    padding: 10px;
+}
+#receiver{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    height: max-content;
+    padding: 10px;
+}
+
+#chatView ::-webkit-scrollbar,#contactlist ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+#chatView ::-webkit-scrollbar-track,#contactlist ::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+#chatView ::-webkit-scrollbar-thumb ,#contactlist ::-webkit-scrollbar-thumb{
+  background-color: transparent;
+}
+#menuAndDivs{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#imageAndName img{
+    height: 130px;
+    border-radius: 100px;
+    width: 130px;
+    color: white;
+    border: 4px solid;
+    margin-right: 5%;
+}
+
+#editWindw div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#editWindw input{
+    margin-left: 15px;
+    
+}
+
+#nameEdit img,#numberEdit img{
+    width: 40px;
+    height: 40px;
+}
+#editWindw{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: -40%;
+    padding: 20px;
+    width: 90%;
+    margin-left: 260px;
+}
+#imageAndName{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -33%;
+}
+
+#chat{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    position: fixed;
+    top: 7%;
+    left: 74%;
+    width: 20%;
+    height: 80%;
+    background: linear-gradient(79deg, #464c6f, #4050b9);
+}
+#contactOnChat .imageDiv,#contactOnChat img{
+    height: 45px;
+    border-radius: 25px;
+    width: 60px;
+}
+#contactOnChat{
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    height: 15%;
+    justify-content: flex-start;
+}
+
+#contactOnChat #pIcon{
+    color: white;
+    font-size: 150%;
+}
+#contactOnChat:hover{
+    background: rgba(255, 255, 255, 0.25);
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0%;
+    height: 15%;
+    justify-content: space-around;
+    margin-left: 8%;
+}
+
+#content h3,#content p{
+    padding: 0%;
+    margin: 0%;
+}
+
+#time{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    /* margin-left: 14px; */
+    color: #b0cde2;
+}
+#msgTimeR{
+    border-radius: 0px 10px 10px 10px;
+}
+#msgTimeS{
+    border-radius: 10px 0px 10px 10px;
+}
+#msgTimeS,#msgTimeR{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    background: linear-gradient(79deg, #495491, #4258e3);
+    
+    margin: 2px;
+}
+
+#msgTimeS #msg,#msgTimeR #msg{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 10px 10px 10px;
+
+}
+
+#msgTimeS #time,#msgTimeR #time{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 15%;
+    padding-right: 8px;
+}

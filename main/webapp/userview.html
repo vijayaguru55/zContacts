@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="stylesheet" href="./userStyle.css">
+<link rel="stylesheet" href="./pop.css">
+<link rel="stylesheet" href="./style.css">
+<script src="./index.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<body id="main" onload="chechLogin()">
+	<div id="signuppage">
+		<div id="logNdSing">
+			<h2>SignUp</h2>
+			
+			<div id="signup" method="post">
+				<!-- <button id="signupImg"><input type="file" id="userImagein" placeholder="image"
+					name="imageIn" required style="visibility: hidden;"><img
+					src="./icons8-add-image-96.png" alt="" id="signImgofImg" onclick="clickimg()"></button> -->
+				<input type="text" id="usernamesignup" placeholder="Username"
+					name="username" required>
+				<div id="usernameValid">
+					<p>Username must be atleast 5 characters.</p>
+				</div>
+				<input type="tel" id="mobilenumber" placeholder="Mobile Number"
+					name="mobilenumber" pattern="^\d{10}$"
+					title="Please enter valid phone number" required>
+				<div id="mobileValid">
+					<p>Mobile number must be 10digits</p>
+				</div>
+				<input type="password" id="passwordsignup" placeholder="Password"
+					name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required>
+				<div id="passwordValid">
+					<p>Password Must contain at least one number,one
+						uppercase,lowercase letter, and at least 8 or more characters</p>
+				</div>
+				<button type="submit" onclick="login('signup')">SignUp</button>
+			</div>
+			<button id="loginButton" onclick="loginpage()">Log In</button>
+		</div>
+	</div>
+	<div id="loginpage" style="display: none;">
+		<div id="loginmain">
+			<h2>Login</h2>
+			<div id="login" method="post">
+				<input type="text" id="username" name="username"
+					placeholder="Username" required />
+				<div id="usernameValidlog">
+					<p>Username must be atleast 5 characters.</p>
+				</div>
+				<input type="password" id="password" name="password"
+					placeholder="Password"
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+					required />
+				<div id="passwordValidlog">
+					<p>Password must contain number,uppercase letter,special
+						character and at least 8 or more characters</p>
+				</div>
+				<button type="submit" id="loginbutton" onclick="login('login')">Login</button>
+			</div>
+		</div>
+	</div>
+	<div id="usermain" style="display: none;">
+		<div id="header">
+			<div id="logoAndName">
+				<div id="menu">
+					<span onclick="menubar()">&#9776;</span>
+				</div>
+
+				<div id="headerandlogo">
+					<img src="./icons8-contacts-32.png" alt="">
+					<h1>zContacts</h1>
+				</div>
+
+			</div>
+			<div id="searchAndHelp">
+				<div id="searchConatcs">
+					<input type="search" id="searchText" placeholder="Search" onkeypress="loadSearch()" /> <img
+						type="submit" src="./icons8-search-user-48.png" id="searchForContacts"
+						 title="Search" style="border-radius: 0px;"></img>
+				</div>
+				<div id="chat_help">
+					<div id="chatIcon" onclick="viewChat()">
+						<img src="./icons8-chat-48 (2).png" alt="">
+					</div>
+					<div>
+						<a href="mailto:support@zcontacts.com"><img
+							src="./icons8-help-48.png" alt="" id="helpicon"
+							title="Mail to Helpcenter"> </a>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+		<div id="menuAndDivs">
+		<div id="menubar">
+			<img id="userimg" src="./icons8-male-user-50.png" alt="">
+			<div id="nameAndId">
+				<h3 id="userNameh2" ></h3>
+				<p id="userId" style="display: none;"></p>
+			</div>
+			<div onclick="viewAll(this)" id="allHead"	class="selectedHead" name="All Contacts">
+				<button id="favButton" ><img src="./icons8-contacts-32.png" alt=""></button>
+				<!-- <span>All</span> -->
+			</div>
+			<div onclick="viewFavs(this)" id="favHead" name="Fsvourites">	
+				<button id="favButton" ><img src="./icons8-star-50.png" alt=""></button>
+			</div>
+			<div onclick="addContact(this)" id="addHead" name="Add Contacts">
+				<button type="submit" name="Add Contact" id="addcontactButton"
+					><img src="./icons8-add-male-user-64.png" alt=""></button>
+			</div>
+			<div  onclick="logout(this)" id="logoutHead" name="Logout">
+				<button id="logoutbutton"><img src="./icons8-logout-rounded-64.png" alt=""></button>
+			</div>
+		</div>
+		
+				<div id="favcontactlist">
+			</div>
+			<div id="contactlist">
+			</div>
+
+			
+			<div id="contactView">
+				<div id="conView">
+					<div id="back"	style="cursor: pointer;"><span onclick="closeContact()">&#8592;</span></div>
+					<div id="contactImage"></div>
+					<div id="nameAndMob">
+						<h2 id="contactViewName"></h2>
+						<h5 id="contactViewNumber"></h5>
+					</div>
+						
+						<div id="favAndDel">
+							<span id="favourites"  onclick="addTofav(this)">
+							<i  class="fas fa-heart"></i></span>
+							<span id="del"  onclick="viewOption(this)" >&#8942; </span>
+							<span onclick="snedMessage(this)">&#10148;</span>
+							
+						</div>
+						<span><button onclick="edit(this)">Edit</button></span>
+				</div>
+				
+			</div>
+		</div>
+	</div>	
+			<template>
+				<div id="contacts" >
+					<h3 id="image" onclick="contactview(this)">
+						<div class="imageDiv"></div>
+						
+						<div class="contactname"></div>
+					</h3>
+					<h3 id="image" onclick="contactview(this)">
+						<div class="contactnumber"></div>
+					</h3>
+					<!--  -->
+					<div id="favAndDel">
+						<span id="favourites"  onclick="addTofav(this)">
+						<i  class="fas fa-heart"></i></span>
+						<span id="del"  onclick="viewOption(this)" >&#8942; </span>
+						<span onclick="snedMessage(this)">&#10148;</span>
+					</div>
+					
+				</div>
+			</template>
+			
+		</div>
+		
+	
+		<template>
+			<div id="favContacts" onclick="viewContact(this)">
+				<h3 id="image">
+					<div class="imageDiv"></div>
+					
+					<div class="contactname"></div>
+				</h3>
+				<h3 id="image">
+					<div class="contactnumber"></div>
+				</h3>
+				<!--  -->
+				<div id="favAndDel">
+					<span id="favourites"  onclick="addTofav(this)">
+					<i  class="fas fa-heart"></i></span>
+					<span id="del"  onclick="viewOption(this)" >&#8942; </span>
+					<span onclick="snedMessage(this)">&#10148;</span>
+				</div>
+			</div>
+		</template>
+		<div id="chatView">
+			<div id="chatHeader">
+				<span><img src="" alt=""></span>
+				<h4 id="chatName"></h4>
+				
+			</div>
+			<div id="chatSpace">
+				 
+			</div>
+			<div id="messageAndSend">
+			<!-- <textarea name="" id="message"></textarea> -->
+			<input type="text" name="" id="message">
+			<span id="sendButton" src="./icons8-sent-24.png" style="visibility: hidden;">&#10148;</span>
+			</div>
+		</div>
+
+
+		<div id="chat" style="display: none;">
+		</div>
+		
+		<template>
+			<div id="contactOnChat" onclick="snedMessage(this)">
+				<div id="pIcon"></div>
+				<div id="content">
+					<h3></h3>
+					<p></p>
+					<p style="display: none;"></p>
+				</div>
+			</div>
+		</template>
+		<template>
+			<div id="sender"><div id="msgTimeS"><div id="msg"></div><div id="time"></div></div></div>
+		</template>
+		<template>
+			<div id="receiver"><div id="msgTimeR"><div id="msg"></div><div id="time"></div></div></div>
+		</template>
+		<div id="option" style="display: none;">
+			<div id="print"><img src="./icons8-print-50.png" alt=""><h4>Print</h4></div>
+			<div id="hide"><img src="./icons8-close-pane-16.png" alt=""><h4>Hide</h4></div>
+			<div id="delete"><img src="./icons8-delete-32.png" alt="">Delete</div>
+		</div>
+		<div id="NoContacts">
+			<h1>No Contacts Found...</h1>
+		</div>
+		
+
+		<div id="delContact">
+			<h2>Are Sure..you want to delete..?</h2>
+			<div id="yesOrNo">
+				<button id="yes">Yes</button>
+				<button onclick="cancelDelte()">No</button>
+			</div>
+		</div>
+	</div>
+	<div id="invalidDetails">
+		<div id="desc"></div>
+	</div>
+	<div id="addcontact">
+		<input type="checkbox" onclick="insertContact('addContact')"
+			id="show" style="display: none;">
+		<div class="container">
+			<label for="show" class="close-btn" id="closingButton" title="close">×</label>
+			<h1>Add Contact</h1>
+			<div>
+				<div>
+					<button type="button" id="imageInput" onclick="getFile()">
+						<input type="file" id="imgIn" style="visibility: hidden;"><img
+							src="./icons8-add-image-96.png" alt="" id="addImg">
+					</button>
+					<label>Name</label> <input id="contactnamein" class="nameinput"
+						type="text"> <label>Number</label> <input
+						id="contactnumberin" class="nameinput" type="number"
+						pattern="^\d{10}$" title="Please enter valid phone number"
+						required>
+					<button id="contactsAddbutton">Submit</button>
+					<closeform></closeform>
+				</div>
+			</div>
+		</div>
+		<div id="editWindw" style="display: none;">
+			<div id="back"	style="cursor: pointer;"><span onclick="closeEdit()">&#8592;</span></div>
+			<div id="imageAndName">
+				<input type="file" id="imageEdit" style="display: none;">
+				<img src="./icons8-add-image-96.png" alt="" id="editImage">
+							<h3 id="nameInEdit"></h3>
+			</div>
+			<br>
+			<div id="nameEdit"><img src="./icons8-contacts-32.png" alt=""><input type="text" ></div>
+			<div id="numberEdit"><img src="./icons8-phone-50.png" alt=""><input type="text" ></div>
+			<!-- <div><input type="text"  id="date"></div> -->
+			<div><button style="cursor:not-allowed ;" id="saveButton">save</button></div>
+		</div>
+		<!-- <div id="headings"><h4>Name</h4><h4>Mobile</h4><div><h4>       </h4><span><h4>      </h4></span></div></div> -->
+		<br>
+	<div>
+</body>
+</html>

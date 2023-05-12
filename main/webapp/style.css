@@ -1,0 +1,149 @@
+#signup{
+    display: flex;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    min-height: 400px;
+    min-width: 280px;
+    flex-wrap: nowrap;
+    background: linear-gradient(238deg, #8388ac, transparent);
+    padding: 15px;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#login{
+    display: flex;
+    /* border: 0px solid transparent; */
+    border-radius: 10px;
+    min-height: 322px;
+    max-width: 320px;
+    flex-wrap: nowrap;
+    background: linear-gradient(238deg, #8388ac, transparent);
+    padding: 15px;
+    align-items: center;
+    margin: 0px;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#userNameh2:hover{
+    color: white;
+}
+#logNdSing{
+    -webkit-box-flex: 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 1px;
+    line-height: 1.8;
+    background: linear-gradient(270deg, #282A37, #3C3F4C);
+    font-weight: normal;
+    color: #f4e8e8;
+    left: 18%;
+    top: 8%;
+    height: 600px;
+    position: relative;
+    max-width: 400px;
+    z-index: 0;
+    padding: 30px;
+}
+
+#loginmain{
+    -webkit-box-flex: 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 1px;
+    line-height: 1.8;
+    background: linear-gradient(270deg, #282A37, #3C3F4C);
+    font-weight: normal;
+    color: #f4e8e8;
+    left: 20%;
+    top: 15%;
+    height: 450px;
+    position: relative;
+    max-width: 348px;
+    z-index: 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+::placeholder{
+    color: white;
+}
+input{
+    background: transparent;
+    /* min-width: 261px; */
+    border: none;
+    height: 42px;
+    font-size: 15px;
+    color: white !important;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    text-decoration-color: white;
+}
+button{
+    display: block;
+    width: 160px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background: linear-gradient(308deg, #8b95cc, #2c2f44);
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 12px;
+    height: 40px;
+}
+
+.contactname,.contactnumber{
+    cursor: pointer;
+    /* font-size: 14px; */
+    width: 200px;
+}
+
+#invalid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+h2{
+    font-size: 30px;
+}
+#signuppage,#loginpage{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+
+
+
+#signupImg{
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    margin-bottom: 5%;
+    padding: 0px;
+    margin-top: 0px;
+}
+#signupImg.img{
+    
+    height: 50%;	
+    width: 50%;
+}
